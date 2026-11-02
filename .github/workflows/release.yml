@@ -1,0 +1,20 @@
+name: نشر النسخة
+on:
+  push:
+    branches: [main]
+    paths: ['apk/**']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          V=$(cat apk/VERSION)
+          gh release delete "v$V" -y --cleanup-tag || true
+          gh release create "v$V" apk/ZadAlMuslim.apk --title "زاد المسلم $V" --latest \
+            --notes "مصحف ورش بالتجويد الملوّن (دار المعرفة) بجودة عالية، ومصحف المدينة برواية حفص، مع التكبير بالأصابع."
