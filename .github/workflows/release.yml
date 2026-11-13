@@ -17,4 +17,4 @@ jobs:
           V=$(cat apk/VERSION)
           gh release delete "v$V" -y --cleanup-tag || true
           gh release create "v$V" apk/ZadAlMuslim.apk --title "زاد المسلم $V" --latest \
-            --notes "مصحف ورش بالتجويد الملوّن (دار المعرفة) بجودة عالية، ومصحف المدينة برواية حفص، مع التكبير بالأصابع."
+            --notes "رفع الأذان بثلاثة أصوات (الحرم المكي، الحرم المدني، الجزائر) وأذان خاص للفجر، مع زر الإيقاف والتحكم الكامل."
