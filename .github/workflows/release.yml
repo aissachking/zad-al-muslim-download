@@ -17,4 +17,4 @@ jobs:
           V=$(cat apk/VERSION)
           gh release delete "v$V" -y --cleanup-tag || true
           gh release create "v$V" apk/ZadAlMuslim.apk --title "زاد المسلم $V" --latest \
-            --notes "رفع الأذان بثلاثة أصوات (الحرم المكي، الحرم المدني، الجزائر) وأذان خاص للفجر، مع زر الإيقاف والتحكم الكامل."
+            --notes "أدوات على الشاشة الرئيسية، اتجاه القبلة، تذكير الجمعة وسورة الكهف، وإيقاف الأذان بأزرار الصوت وزر القفل."
